@@ -174,3 +174,13 @@ Debug:
 - In local HTTP dev, keep `SESSION_COOKIE_SECURE=false`.
 - Spotify tokens are stored in plain text in this demo app.
   For production, encrypt tokens at rest.
+
+## 12) Render deployment note (backend)
+If Render does not provide Java runtime in your current setup, deploy backend as a Docker Web Service:
+- Root directory: `backend`
+- Dockerfile: `backend/Dockerfile`
+- No separate build/start command needed (Docker handles it)
+
+Make sure backend env vars are configured in Render and that:
+- `APP_BASE_URL` points to frontend URL
+- `SPOTIFY_REDIRECT_URI` points to backend callback URL
