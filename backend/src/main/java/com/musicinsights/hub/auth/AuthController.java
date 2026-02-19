@@ -37,6 +37,15 @@ public class AuthController {
     return Map.of("authorizeUrl", startResponse.authorizeUrl());
   }
 
+  @GetMapping("/auth/spotify/login")
+  public void login(HttpServletResponse response) throws IOException {
+    AuthService.AuthStartResponse startResponse = authService.buildAuthorizeUrl();
+    if (startResponse.state() != null) {
+      response.addHeader(HttpHeaders.SET_COOKIE, authService.buildOauthStateCookie(startResponse.state()).toString());
+    }
+    response.sendRedirect(startResponse.authorizeUrl());
+  }
+
   @GetMapping("/auth/spotify/callback")
   public void callback(@RequestParam String code, @RequestParam(required = false) String state, HttpServletRequest request, HttpServletResponse response) throws IOException {
     String stateCookie = Arrays.stream(Optional.ofNullable(request.getCookies()).orElse(new Cookie[0]))

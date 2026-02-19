@@ -1,11 +1,10 @@
 import { Box, Button, Chip, Container, Paper, Stack, Typography } from '@mui/material';
-import { api } from '../api';
 import { motion } from 'framer-motion';
 
 export function LandingPage() {
-  const connect = async () => {
-    const response = await api.startSpotifyAuth();
-    window.location.href = response.authorizeUrl;
+  const connect = () => {
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8080';
+    window.location.href = `${apiBaseUrl}/auth/spotify/login`;
   };
 
   return (
