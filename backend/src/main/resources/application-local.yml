@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: ${MUSICHUB_DB_URL:jdbc:postgresql://localhost:5432/music_insights_dev}
+    username: ${MUSICHUB_DB_USER:postgres}
+    password: ${MUSICHUB_DB_PASS:postgres}
+app:
+  spotify-mock-mode: ${SPOTIFY_MOCK_MODE:true}
+  session-cookie-secure: ${SESSION_COOKIE_SECURE:false}

@@ -1,0 +1,7 @@
+[
+  { "id": "artist_1", "name": "The Echoes", "uri": "spotify:artist:artist_1", "genres": ["indie", "alternative"], "rank": 1 },
+  { "id": "artist_2", "name": "Nordic Pulse", "uri": "spotify:artist:artist_2", "genres": ["electronic", "synthpop"], "rank": 2 },
+  { "id": "artist_3", "name": "Loft Signals", "uri": "spotify:artist:artist_3", "genres": ["indie", "dream pop"], "rank": 3 },
+  { "id": "artist_4", "name": "Granite Choir", "uri": "spotify:artist:artist_4", "genres": ["folk", "acoustic"], "rank": 4 },
+  { "id": "artist_5", "name": "Metro Static", "uri": "spotify:artist:artist_5", "genres": ["electronic"], "rank": 5 }
+]

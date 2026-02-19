@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  --mih-bg: radial-gradient(1200px 600px at 10% -10%, rgba(14, 165, 233, 0.2), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(251, 146, 60, 0.2), transparent 55%),
+    linear-gradient(160deg, #eef6ff 0%, #f2fff6 52%, #fff7ef 100%);
+}
+
+body[data-theme="dark"] {
+  --mih-bg: radial-gradient(1200px 700px at 8% -12%, rgba(34, 197, 94, 0.14), transparent 60%),
+    radial-gradient(900px 600px at 100% 0%, rgba(14, 165, 233, 0.16), transparent 55%),
+    linear-gradient(160deg, #050a16 0%, #091427 52%, #0f172a 100%);
+}
+
+:root {
+  color: #0f172a;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--mih-bg);
+  overflow-x: hidden;
+}
+
+.mih-page-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.mih-card {
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+}
+
+.mih-glow {
+  box-shadow: 0 20px 50px rgba(13, 148, 136, 0.12);
+}
+
+.mih-hero-gradient {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0d9488 45%, #fb923c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

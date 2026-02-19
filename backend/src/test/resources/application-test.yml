@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: ${MUSICHUB_TEST_DB_URL:jdbc:h2:mem:musicinsights;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH}
+    username: ${MUSICHUB_TEST_DB_USER:sa}
+    password: ${MUSICHUB_TEST_DB_PASS:}
+  jpa:
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+app:
+  spotify-mock-mode: true
+  jwt-secret: test-secret-which-is-long-enough
+  base-url: http://localhost:5173
+  spotify-client-id: test-client-id
+  spotify-client-secret: test-client-secret
+  spotify-redirect-uri: http://localhost:8080/auth/spotify/callback
+  session-cookie-secure: false

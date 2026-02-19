@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${MUSICHUB_DB_URL:jdbc:postgresql://localhost:5432/music_insights_dev}
+    username: ${MUSICHUB_DB_USER:postgres}
+    password: ${MUSICHUB_DB_PASS:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: health,info
+
+app:
+  base-url: ${APP_BASE_URL:http://localhost:5173}
+  jwt-secret: ${JWT_SECRET:replace-me-in-env}
+  spotify-mock-mode: ${SPOTIFY_MOCK_MODE:true}
+  spotify-client-id: ${SPOTIFY_CLIENT_ID:}
+  spotify-client-secret: ${SPOTIFY_CLIENT_SECRET:}
+  spotify-redirect-uri: ${SPOTIFY_REDIRECT_URI:http://localhost:8080/auth/spotify/callback}
+  cache-ttl-minutes: ${CACHE_TTL_MINUTES:20}
+  session-cookie-secure: ${SESSION_COOKIE_SECURE:true}

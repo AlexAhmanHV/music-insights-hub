@@ -1,0 +1,19 @@
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Java
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# IDE/system
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
