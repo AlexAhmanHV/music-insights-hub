@@ -5,7 +5,6 @@ frontend/.vite/
 
 # Java
 backend/target/
-backend/.mvn/wrapper/maven-wrapper.jar
 
 # IDE/system
 .idea/
