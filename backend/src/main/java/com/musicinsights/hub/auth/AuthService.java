@@ -143,7 +143,7 @@ public class AuthService {
         .httpOnly(true)
         .secure(appProperties.sessionCookieSecure())
         .path("/auth/spotify/callback")
-        .sameSite("Lax")
+        .sameSite(resolveSameSite())
         .maxAge(state == null ? 0 : OAUTH_STATE_TTL_SECONDS)
         .build();
   }
@@ -153,7 +153,7 @@ public class AuthService {
         .httpOnly(true)
         .secure(appProperties.sessionCookieSecure())
         .path("/")
-        .sameSite("Lax")
+        .sameSite(resolveSameSite())
         .maxAge(maxAgeSeconds)
         .build();
   }
@@ -224,6 +224,10 @@ public class AuthService {
   private boolean isLocalRedirectUri() {
     String uri = appProperties.spotifyRedirectUri();
     return uri != null && (uri.startsWith("http://localhost:") || uri.startsWith("http://127.0.0.1:"));
+  }
+
+  private String resolveSameSite() {
+    return appProperties.sessionCookieSecure() ? "None" : "Lax";
   }
 
   public record AuthStartResponse(String authorizeUrl, String state) {}
