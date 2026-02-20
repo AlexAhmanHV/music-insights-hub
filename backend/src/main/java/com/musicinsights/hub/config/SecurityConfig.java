@@ -30,7 +30,7 @@ public class SecurityConfig {
         .cors(Customizer.withDefaults())
         .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/auth/spotify/start", "/auth/spotify/callback", "/me").permitAll()
+            .requestMatchers("/auth/spotify/start", "/auth/spotify/login", "/auth/spotify/callback", "/me").permitAll()
             .requestMatchers("/health", "/info", "/actuator/health", "/actuator/info", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
             .requestMatchers(HttpMethod.GET, "/error").permitAll()
             .anyRequest().authenticated())
