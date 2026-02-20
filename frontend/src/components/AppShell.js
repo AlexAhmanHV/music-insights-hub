@@ -42,5 +42,5 @@ export function AppShell({ children }) {
                     py: 1.5,
                 }, children: _jsxs(Stack, { direction: "row", spacing: 1, alignItems: "center", justifyContent: "center", children: [_jsx(Box, { component: "img", src: "/alexahman-icon.png", alt: "AlexAhman icon", sx: { width: 20, height: 20, borderRadius: 1 }, onError: (event) => {
                                 event.currentTarget.style.display = 'none';
-                            } }), _jsx(Typography, { component: "a", href: "https://alexahman.se", target: "_blank", rel: "noreferrer", sx: { color: 'text.secondary', textDecoration: 'none', '&:hover': { color: 'primary.main' } }, children: "Skapad av AlexAhman.se" })] }) })] }));
+                            } }), _jsx(Typography, { component: "a", href: "https://alexahman.se", target: "_blank", rel: "noreferrer noopener", sx: { color: 'text.secondary', textDecoration: 'none', '&:hover': { color: 'primary.main' } }, children: "Skapad av AlexAhman.se" })] }) })] }));
 }

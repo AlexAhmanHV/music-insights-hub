@@ -142,7 +142,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             component="a"
             href="https://alexahman.se"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
             sx={{ color: 'text.secondary', textDecoration: 'none', '&:hover': { color: 'primary.main' } }}
           >
             Skapad av AlexAhman.se
