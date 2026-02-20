@@ -184,3 +184,11 @@ If Render does not provide Java runtime in your current setup, deploy backend as
 Make sure backend env vars are configured in Render and that:
 - `APP_BASE_URL` points to frontend URL
 - `SPOTIFY_REDIRECT_URI` points to backend callback URL
+- Frontend has SPA rewrite:
+  - Source: `/*`
+  - Destination: `/index.html`
+  - Action: `Rewrite`
+
+OAuth callback flow in production:
+- Backend callback URL: `https://<your-backend>.onrender.com/auth/spotify/callback`
+- Frontend landing after callback: `https://<your-frontend>.onrender.com/auth/callback-complete`

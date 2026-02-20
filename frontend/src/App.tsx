@@ -8,6 +8,7 @@ import { DashboardPage } from './pages/DashboardPage';
 import { TrendsPage } from './pages/TrendsPage';
 import { PlaylistBuilderPage } from './pages/PlaylistBuilderPage';
 import { SettingsPage } from './pages/SettingsPage';
+import { AuthCallbackCompletePage } from './pages/AuthCallbackCompletePage';
 import { AppShell } from './components/AppShell';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { GlobalErrorSnackbar } from './components/GlobalErrorSnackbar';
@@ -83,6 +84,7 @@ export default function App() {
             <AppShell>
               <Routes>
                 <Route path="/" element={<LandingPage />} />
+                <Route path="/auth/callback-complete" element={<AuthCallbackCompletePage />} />
                 <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
                 <Route path="/trends" element={<ProtectedRoute><TrendsPage /></ProtectedRoute>} />
                 <Route path="/playlist-builder" element={<ProtectedRoute><PlaylistBuilderPage /></ProtectedRoute>} />

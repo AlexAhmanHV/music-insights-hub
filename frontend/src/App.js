@@ -9,6 +9,7 @@ import { DashboardPage } from './pages/DashboardPage';
 import { TrendsPage } from './pages/TrendsPage';
 import { PlaylistBuilderPage } from './pages/PlaylistBuilderPage';
 import { SettingsPage } from './pages/SettingsPage';
+import { AuthCallbackCompletePage } from './pages/AuthCallbackCompletePage';
 import { AppShell } from './components/AppShell';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { GlobalErrorSnackbar } from './components/GlobalErrorSnackbar';
@@ -69,5 +70,5 @@ export default function App() {
     const toggleMode = () => {
         setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
     };
-    return (_jsxs(ThemeProvider, { theme: theme, children: [_jsx(CssBaseline, {}), _jsx(ThemeModeProvider, { value: { mode, toggleMode }, children: _jsx(AuthProvider, { children: _jsxs(BrowserRouter, { children: [_jsx(AppShell, { children: _jsxs(Routes, { children: [_jsx(Route, { path: "/", element: _jsx(LandingPage, {}) }), _jsx(Route, { path: "/dashboard", element: _jsx(ProtectedRoute, { children: _jsx(DashboardPage, {}) }) }), _jsx(Route, { path: "/trends", element: _jsx(ProtectedRoute, { children: _jsx(TrendsPage, {}) }) }), _jsx(Route, { path: "/playlist-builder", element: _jsx(ProtectedRoute, { children: _jsx(PlaylistBuilderPage, {}) }) }), _jsx(Route, { path: "/settings", element: _jsx(ProtectedRoute, { children: _jsx(SettingsPage, {}) }) }), _jsx(Route, { path: "*", element: _jsx(Navigate, { to: "/", replace: true }) })] }) }), _jsx(GlobalErrorSnackbar, {})] }) }) })] }));
+    return (_jsxs(ThemeProvider, { theme: theme, children: [_jsx(CssBaseline, {}), _jsx(ThemeModeProvider, { value: { mode, toggleMode }, children: _jsx(AuthProvider, { children: _jsxs(BrowserRouter, { children: [_jsx(AppShell, { children: _jsxs(Routes, { children: [_jsx(Route, { path: "/", element: _jsx(LandingPage, {}) }), _jsx(Route, { path: "/auth/callback-complete", element: _jsx(AuthCallbackCompletePage, {}) }), _jsx(Route, { path: "/dashboard", element: _jsx(ProtectedRoute, { children: _jsx(DashboardPage, {}) }) }), _jsx(Route, { path: "/trends", element: _jsx(ProtectedRoute, { children: _jsx(TrendsPage, {}) }) }), _jsx(Route, { path: "/playlist-builder", element: _jsx(ProtectedRoute, { children: _jsx(PlaylistBuilderPage, {}) }) }), _jsx(Route, { path: "/settings", element: _jsx(ProtectedRoute, { children: _jsx(SettingsPage, {}) }) }), _jsx(Route, { path: "*", element: _jsx(Navigate, { to: "/", replace: true }) })] }) }), _jsx(GlobalErrorSnackbar, {})] }) }) })] }));
 }

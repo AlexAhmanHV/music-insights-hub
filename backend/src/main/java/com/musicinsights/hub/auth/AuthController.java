@@ -55,7 +55,7 @@ public class AuthController {
         .orElse(null);
     try {
       authService.handleCallback(code, state, stateCookie, response);
-      response.sendRedirect(appProperties.baseUrl() + "/dashboard");
+      response.sendRedirect(appProperties.baseUrl() + "/auth/callback-complete");
     } finally {
       response.addHeader(HttpHeaders.SET_COOKIE, authService.buildOauthStateCookie(null).toString());
     }

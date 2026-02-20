@@ -1,7 +1,19 @@
 import { Box, Button, Chip, Container, Paper, Stack, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 export function LandingPage() {
+  const { me, loading } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!loading && me?.connected) {
+      navigate('/dashboard', { replace: true });
+    }
+  }, [loading, me?.connected, navigate]);
+
   const connect = () => {
     const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8080';
     window.location.href = `${apiBaseUrl}/auth/spotify/login`;
